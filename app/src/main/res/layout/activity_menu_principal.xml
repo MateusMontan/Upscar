@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tabs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".MenuPrincipal">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/pin_map"
+        app:layout_constraintStart_toEndOf="@+id/textLocal2"
+        app:layout_constraintTop_toTopOf="@+id/textLocal2" />
+
+    <ImageView
+        android:id="@+id/perfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/profile_male"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textLocal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/local"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCidade"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/automoveis"
+        android:layout_width="330dp"
+        android:layout_height="211dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/carro_fundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCidade" />
+
+    <View
+        android:id="@+id/servicos"
+        android:layout_width="330dp"
+        android:layout_height="211dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/fundo_servico"
+        android:clickable="true"
+        android:contentDescription="@string/descricao_servico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/automoveis" />
+
+    <TextView
+        android:id="@+id/textAutomoveis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="#37878787"
+        android:backgroundTint="#008F8D8D"
+        android:backgroundTintMode="screen"
+        android:text=" Automóveis"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/automoveis"
+        app:layout_constraintEnd_toEndOf="@+id/automoveis"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/automoveis" />
+
+    <TextView
+        android:id="@+id/textServicos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="#00878787"
+        android:backgroundTint="#398F8D8D"
+        android:backgroundTintMode="screen"
+        android:text=" Serviços"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/servicos"
+        app:layout_constraintEnd_toEndOf="@+id/servicos"
+        app:layout_constraintStart_toStartOf="@+id/servicos" />
+
+    <Spinner
+        android:id="@+id/spinnerCidade"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="11dp"
+        android:alwaysDrawnWithCache="false"
+        android:animateLayoutChanges="false"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLocal2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

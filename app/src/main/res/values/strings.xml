@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ups Car</string>
+    <string name="title_activity_info_servico">Info_Servico</string>
+    <string name="title_activity_maps_servicos">MapsServicos</string>
+    <string name="local">Local</string>
+    <string name="descricao_servico">Botão de a tela serviços</string>
+</resources>
