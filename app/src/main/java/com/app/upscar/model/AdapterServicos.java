@@ -1,8 +1,6 @@
 package com.app.upscar.model;
 
-// ServiceAdapter.java
-import static com.example.mycar.classes.Variaveis.servicoescolhido;
-
+import static com.app.upscar.model.Variaveis.servicoescolhido;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
-import com.example.mycar.R;
-import com.example.mycar.tela.Servicos.Info_Servicos;
+import com.app.upscar.R;
+import com.app.upscar.view.InfoServicos;
 
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class AdapterServicos extends ArrayAdapter<Servico> {
 
         // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter_servicos, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.xml_botao_adapter_servicos, parent, false);
         }
 
         // Configurar o botão do layout
@@ -39,7 +37,7 @@ public class AdapterServicos extends ArrayAdapter<Servico> {
         btnService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Info_Servicos.class);
+                Intent intent = new Intent(v.getContext(), InfoServicos.class);
                 servicoescolhido = service.clone();
                 v.getContext().startActivity(intent);
             }
