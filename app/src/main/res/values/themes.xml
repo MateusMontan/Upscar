@@ -1,9 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Upscar" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.Upscar" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
-    <style name="Theme.Upscar" parent="Base.Theme.Upscar" />
+    <style name="Base.Theme.Upscar.ActionBar" parent="Theme.Material3.Light">
+        <item name="colorPrimary">@color/blue1</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#1907e0</item>
+        <item name="colorPrimaryDark">#0a0a0a</item>
+        <item name="colorAccent">#0a0a0a</item>
+    </style>
+
+    <style name="Theme.Upscar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Upscar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Upscar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

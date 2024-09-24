@@ -18,6 +18,15 @@
         <activity
             android:name=".view.ListaServicos"
             android:exported="false" />
+       <activity
+            android:name=".view.SA_Oleo"
+            android:exported="false" />
+        <activity
+            android:name=".view.MenuUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".view.ListaAutoservicos"
+            android:exported="false" />
         <activity
             android:name=".view.AdicionarAutomoveis"
             android:exported="false" />
