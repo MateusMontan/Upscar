@@ -4,4 +4,6 @@
     <string name="title_activity_maps_servicos">MapsServicos</string>
     <string name="local">Local</string>
     <string name="descricao_servico">Botão de a tela serviços</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
