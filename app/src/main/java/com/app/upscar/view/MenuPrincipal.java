@@ -9,20 +9,23 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.app.upscar.R;
+import com.app.upscar.model.Cidade;
+import com.app.upscar.model.Servico;
+import com.app.upscar.model.Usuario;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
+import static com.app.upscar.model.Variaveis.cidadeescolhida;
+import static com.app.upscar.model.Variaveis.cidades;
+import static com.app.upscar.model.Variaveis.database;
+import static com.app.upscar.model.Variaveis.usuarioEscolhido;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -34,7 +34,7 @@
             android:name=".view.ListaAutomoveis"
             android:exported="false" />
         <activity
-            android:name=".view.Info_Automoveis"
+            android:name=".view.InfoAutomoveis"
             android:exported="false" />
         <activity
             android:name=".view.InfoServicos"
@@ -56,17 +56,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.MainActivity"
-            android:exported="false" />
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
     </application>
 
 </manifest>

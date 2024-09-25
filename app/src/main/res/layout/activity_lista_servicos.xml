@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tela.Servicos.ListaServicos">
+    tools:context=".view.ListaServicos">
 
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:src="@drawable/pin_map"
+        android:src="@drawable/icon_pinmap"
         app:layout_constraintStart_toEndOf="@+id/textLocal3"
         app:layout_constraintTop_toTopOf="@+id/textLocal3" />
 
@@ -36,7 +36,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="5dp"
-        android:fontFamily="@font/poppins"
         android:gravity="center_vertical"
         android:text="Leopoldina"
         android:textSize="16sp"
@@ -49,7 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="80dp"
-        android:fontFamily="@font/poppins"
         android:text="@string/local"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +111,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/postodegasolina"
+                    android:background="@drawable/icon_postogasolina"
                     android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
@@ -140,7 +138,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/testebateria"
+                    android:background="@drawable/icon_testebateria"
                     android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
@@ -167,7 +165,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/mecanico"
+                    android:background="@drawable/icon_mecanico"
                     android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
@@ -194,7 +192,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/pneu"
+                    android:background="@drawable/icon_pneu"
                     android:backgroundTint="#0F3EB6"></View>
 
                 <TextView
@@ -221,7 +219,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/guincho"
+                    android:background="@drawable/icon_guincho"
                     android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
@@ -248,7 +246,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="@drawable/lanternagem"
+                    android:background="@drawable/icon_lanternagem"
                     android:backgroundTint="@color/bluetext"></View>
 
                 <TextView
@@ -272,7 +270,7 @@
         android:layout_height="105dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:src="@drawable/image_propaganda"
+        android:src="@drawable/img_propaganda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_local2" />

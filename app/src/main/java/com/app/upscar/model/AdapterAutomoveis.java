@@ -1,6 +1,5 @@
 package com.app.upscar.model;
 
-import static com.example.mycar.classes.Variaveis.automovelescolhido;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
-import com.example.mycar.R;
-import com.example.mycar.tela.Usuario.ListaAutoservicos;
+import com.app.upscar.R;
+import com.app.upscar.view.ListaAutoservicos;
+import static com.app.upscar.model.Variaveis.automovelescolhido;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
 
         // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.botao_adapter_automovel, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.xml_botao_adapter_automovel, parent, false);
         }
 
         // Configurar o botão do layout
