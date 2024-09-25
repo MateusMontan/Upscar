@@ -26,8 +26,10 @@ import static com.app.upscar.model.Variaveis.cidadeescolhida;
 import static com.app.upscar.model.Variaveis.cidades;
 import static com.app.upscar.model.Variaveis.database;
 import static com.app.upscar.model.Variaveis.usuarioEscolhido;
+import static com.google.android.gms.common.util.CollectionUtils.listOf;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 

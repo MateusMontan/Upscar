@@ -14,11 +14,11 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         Handler handle = new Handler();
 
-//        handle.postDelayed(new Runnable() {
-//            @Override public void run() {
-//                mostrarLogin();
-//            }
-//        }, 2000);
+        handle.postDelayed(new Runnable() {
+            @Override public void run() {
+                mostrarLogin();
+            }
+        }, 2000);
     }
 
     private void mostrarLogin() {

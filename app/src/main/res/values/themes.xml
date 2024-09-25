@@ -1,11 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.Upscar" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Base.Theme.MyCar" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">#000000</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 
-    <style name="Base.Theme.Upscar.ActionBar" parent="Theme.Material3.Light">
+    <style name="Base.Theme.MyCar.ActionBar" parent="Theme.Material3.Light">
         <item name="colorPrimary">@color/blue1</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
@@ -18,12 +19,12 @@
         <item name="colorAccent">#0a0a0a</item>
     </style>
 
-    <style name="Theme.Upscar.NoActionBar">
+    <style name="Theme.MyCar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Upscar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MyCar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.Upscar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MyCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

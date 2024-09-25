@@ -40,14 +40,16 @@ public class Login extends AppCompatActivity {
 
                         finish();
                     }else{
-                        Toast.makeText(Login.this, "Senha incorreta!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Email e/ou senha incorreto!", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(Login.this, "Email do usuario não encontrado!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Email e/ou senha incorreto!", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
+
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

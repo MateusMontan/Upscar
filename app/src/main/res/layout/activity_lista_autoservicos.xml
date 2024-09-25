@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Base.Theme.Upscar.ActionBar"
+    android:theme="@style/Base.Theme.MyCar.ActionBar"
     tools:context=".view.ListaAutomoveis"
     >
 
