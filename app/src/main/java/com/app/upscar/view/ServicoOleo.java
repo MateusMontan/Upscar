@@ -10,14 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.app.upscar.R;
 
@@ -26,7 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SA_Oleo extends AppCompatActivity {
+public class ServicoOleo extends AppCompatActivity {
     private static final int PICK_FILE_REQUEST_CODE = 123;
     private static final int REQUEST_PERMISSION_CODE = 456;
     private File internalFile;
@@ -34,7 +30,7 @@ public class SA_Oleo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sa_oleo);
+        setContentView(R.layout.activity_servico_oleo);
 
         if (checkPermission()) {
             setupUI();

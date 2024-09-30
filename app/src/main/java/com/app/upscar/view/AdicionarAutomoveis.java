@@ -1,7 +1,6 @@
 package com.app.upscar.view;
 
 import static com.app.upscar.model.Variaveis.database;
-import static com.app.upscar.view.ListaAutomoveis.caminhoes;
 import static com.app.upscar.view.ListaAutomoveis.carros;
 import static com.app.upscar.view.ListaAutomoveis.motos;
 
@@ -45,7 +44,7 @@ public class AdicionarAutomoveis extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
-                new String[]{"Carro", "Moto", "Caminhão"}
+                new String[]{"Carro", "Moto"}
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategoria.setAdapter(adapter);
@@ -69,9 +68,6 @@ public class AdicionarAutomoveis extends AppCompatActivity {
                 } else if (tipoVeiculo == "motos") {
                     motos.add(temp);
                     index = String.valueOf(motos.indexOf(temp));
-                } else if (tipoVeiculo == "caminhoes") {
-                    caminhoes.add(temp);
-                    index = String.valueOf(caminhoes.indexOf(temp));
                 }
 
                 String idUsuario = "maF9VK0I2XeTmUV85RziKVC94za2";

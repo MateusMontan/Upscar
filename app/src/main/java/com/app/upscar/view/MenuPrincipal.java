@@ -85,7 +85,7 @@ public class MenuPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), ListaAutomoveis.class);
+                Intent intent = new Intent(v.getContext(), ListaTipoAutomoveis.class);
                 v.getContext().startActivity(intent);
 
             }

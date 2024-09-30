@@ -13,5 +13,6 @@ public class Variaveis {
     public static ArrayList<Cidade> cidades;
 
     public static Cidade cidadeescolhida;
+    public static String tipoAutomovelEscolhido;
 
 }

@@ -4,12 +4,14 @@
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowFullscreen">false</item>
+        
     </style>
 
     <style name="Base.Theme.MyCar.ActionBar" parent="Theme.Material3.Light">
         <item name="colorPrimary">@color/blue1</item>
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
+        
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -17,14 +19,20 @@
         <item name="colorPrimary">#1907e0</item>
         <item name="colorPrimaryDark">#0a0a0a</item>
         <item name="colorAccent">#0a0a0a</item>
+        
     </style>
 
     <style name="Theme.MyCar.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        
     </style>
 
-    <style name="Theme.MyCar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MyCar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        
+    </style>
 
-    <style name="Theme.MyCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MyCar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        
+    </style>
 </resources>
