@@ -1,8 +1,10 @@
 package com.app.upscar.model;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.app.upscar.R;
+import com.app.upscar.view.ListaAutomoveis;
 import com.app.upscar.view.ListaAutoservicos;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -19,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.app.upscar.model.Variaveis.automovelescolhido;
+import static com.app.upscar.model.Variaveis.tipoAutomovelEscolhido;
 
 import androidx.annotation.NonNull;
 
@@ -33,18 +37,17 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Obter o objeto Service para esta posição
         Automovel automovel = getItem(position);
 
-        // Verificar se a view está sendo reutilizada, caso contrário, inflar a view
+        Log.d("Automovel", "getView: "+automovel.toString());
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.xml_botao_adapter_automovel, parent, false);
         }
 
-        // Configurar o botão do layout
         Button btnService = convertView.findViewById(R.id.Btn1);
 
-        btnService.setText(automovel.getModelo());
+        btnService.setText(automovel.getModelo() + " - " + automovel.getMarca());
         btnService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,27 +70,65 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Remover a referência no Firebase
-                DatabaseReference reference_carro = FirebaseDatabase.getInstance()
-                        .getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros")
-                        .child(automovel.getPlaca()); // Usando a placa como chave única
+                // Criar o popup de confirmação
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                LayoutInflater inflater = LayoutInflater.from(getContext());
+                View popupView = inflater.inflate(R.layout.popup_confirm_delete, null);
 
-                reference_carro.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                builder.setView(popupView);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                dialog.getWindow().setLayout(800, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                Button btnConfirmDelete = popupView.findViewById(R.id.btnConfirmDelete);
+                btnConfirmDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onSuccess(Void aVoid) {
-                        // Remover o item da lista local
-                        remove(automovel);
-                        notifyDataSetChanged();
-                        Toast.makeText(getContext(), "Carro removido com sucesso!", Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        DatabaseReference reference_automovel = FirebaseDatabase.getInstance()
+                                .getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros")
+                                .child(getItem(position).toString());
+
+                        Log.d("Automovel 2", "getView: "+automovel.toString());
+                        Log.d("Automovel 2", "getView 2: "+reference_automovel.toString());
+
+
+
+                        reference_automovel.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                remove(automovel);
+                                notifyDataSetChanged();
+                                Toast.makeText(getContext(), "Automóvel removido com sucesso!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+
+                                if(tipoAutomovelEscolhido == "Carros"){
+                                    //((ListaAutomoveis) adapContext).atualizaCarrosAdapter();
+                                }else if(tipoAutomovelEscolhido == "Motos"){
+                                    //((ListaAutomoveis) adapContext).atualizaMotosAdapter();
+                                }
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getContext(), "Erro ao remover o carro.", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        });
                     }
-                }).addOnFailureListener(new OnFailureListener() {
+                });
+
+                Button btnCancelDelete = popupView.findViewById(R.id.btnCancelDelete);
+                btnCancelDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Erro ao remover o carro.", Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        dialog.dismiss();
                     }
                 });
             }
         });
+
 
         return convertView;
 

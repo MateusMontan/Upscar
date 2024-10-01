@@ -102,7 +102,6 @@ public class ListaAutomoveis extends AppCompatActivity {
             }
         });
 
-        //exibirPopUp();
     }
 
     public void atualizaCarrosAdapter() {
@@ -124,31 +123,4 @@ public class ListaAutomoveis extends AppCompatActivity {
             listViewMotos.setAdapter(adapter);
         }
     }
-
-//    public static void exibirPopUp() {
-//        // Cria um objeto Dialog sem um título padrão
-//        final Dialog dialog = new Dialog(this);
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        dialog.setContentView(R.layout.popup_layout);
-//
-//        // Referências aos elementos de UI no layout do pop-up
-//        TextView textView = dialog.findViewById(R.id.textView);
-//        Button btnFechar = dialog.findViewById(R.id.btnFechar);
-//
-//        // Define o texto do TextView conforme necessário
-//        textView.setText("Conteúdo do Pop-up");
-//
-//        // Configura o botão para fechar o pop-up
-//        btnFechar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Lógica a ser executada ao clicar no botão Fechar
-//                Toast.makeText(ListaAutomoveis.this, "Pop-up fechado", Toast.LENGTH_SHORT).show();
-//                dialog.dismiss(); // Fecha o pop-up
-//            }
-//        });
-//
-//        // Exibe o pop-up
-//        dialog.show();
-//    }
 }

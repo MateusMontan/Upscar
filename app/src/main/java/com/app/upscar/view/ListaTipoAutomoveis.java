@@ -4,6 +4,7 @@ import static com.app.upscar.model.Variaveis.tipoAutomovelEscolhido;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,6 +32,7 @@ public class ListaTipoAutomoveis extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tipoAutomovelEscolhido = "Carros";
+                Log.d("Tipo","Carros: "+tipoAutomovelEscolhido.toLowerCase());
                 Intent intent = new Intent(v.getContext(), ListaAutomoveis.class);
                 v.getContext().startActivity(intent);
 

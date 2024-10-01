@@ -37,6 +37,7 @@ public class InfoServicos extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     private TextView textView;
+    private TextView textViewEndereco;
     private ImageView iconeWhatsapp;
     private ImageView iconeTelefoneLigar;
 
@@ -53,12 +54,14 @@ public class InfoServicos extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_info_servicos);
 
         textView = findViewById(R.id.textNomeServico);
+        textViewEndereco = findViewById(R.id.End1);
         iconeWhatsapp = findViewById(R.id.ImageViewWhatsapp);
         iconeTelefoneLigar = findViewById(R.id.ImageViewLigar);
         imageView5 = findViewById(R.id.imageViewEmail);
         //imageLogo = findViewById(R.id.ImageViewServico);
 
         textView.setText(servicoescolhido.getNome());
+        textViewEndereco.setText(servicoescolhido.getEndereco());
 
         if(servicoescolhido.getWhatsapp().isEmpty()){
             aplicarFiltroPretoBranco();

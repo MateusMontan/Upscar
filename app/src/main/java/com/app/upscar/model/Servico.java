@@ -18,7 +18,7 @@ public class Servico implements Cloneable{
     private String nome;
     private String email;
     private String whatsapp;
-
+    private String endereco;
     private String telefone;
     private String x;
     private String y;
@@ -44,6 +44,13 @@ public class Servico implements Cloneable{
         this.y = y;
     }
 
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
 
     public String getY() {
         return y;
@@ -61,7 +68,7 @@ public class Servico implements Cloneable{
     public Servico(){
 
     }
-    public Servico(String icon, String nome, String whatsapp, String x, String y, String email, String tipo) {
+    public Servico(String icon, String nome, String whatsapp, String x, String y, String email, String tipo, String endereco) {
         this.nome = nome;
         this.whatsapp = whatsapp;
         this.x = x;
@@ -69,6 +76,7 @@ public class Servico implements Cloneable{
         this.icon = icon;
         this.email = email;
         this.tipo = tipo;
+        this.endereco = endereco;
     }
 
 

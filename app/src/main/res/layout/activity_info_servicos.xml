@@ -123,30 +123,18 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
-            android:text="Rua Romualdo Joaquim de Souza nª 66, Apt. 202"
+            android:text=""
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Texto1" />
-
-        <TextView
-            android:id="@+id/End3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/End1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:text="Praça da Bandeira"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/End1"
-            app:layout_constraintTop_toBottomOf="@+id/End1" />
 
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="0dp"
             android:layout_height="260dp"
-            android:layout_below="@id/End3"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="8dp"
