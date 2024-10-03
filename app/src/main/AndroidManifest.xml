@@ -31,13 +31,7 @@
             android:name=".view.ListaAutoservicos"
             android:exported="false" />
         <activity
-            android:name=".view.AdicionarAutomoveis"
-            android:exported="false" />
-        <activity
             android:name=".view.ListaAutomoveis"
-            android:exported="false" />
-        <activity
-            android:name=".view.InfoAutomoveis"
             android:exported="false" />
         <activity
             android:name=".view.InfoServicos"

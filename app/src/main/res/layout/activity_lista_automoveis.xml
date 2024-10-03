@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:theme="@style/Base.Theme.MyCar.ActionBar"
     tools:context=".view.ListaAutomoveis"
     >
@@ -47,9 +48,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="16dp"
-        android:text="Adicionar"
+        android:text="Inserir veículo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/green"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

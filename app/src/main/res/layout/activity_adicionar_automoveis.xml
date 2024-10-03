@@ -2,51 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.AdicionarAutomoveis">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:theme="@style/Base.Theme.MyCar.ActionBar"
+    android:padding="12dp">
+
 
     <EditText
-        android:id="@+id/EditMarca"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_edit_text"
-        android:drawablePadding="12dp"
-        android:hint="EX: CHEVROLET"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:id="@+id/EditPlaca"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Ex: ABC1D34"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPlaca" />
+
+    <EditText
+        android:id="@+id/editModelo"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Ex: Onix"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textModelo" />
+
+    <EditText
+        android:id="@+id/editMarca"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Ex: Chevrolet"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textMarca" />
 
     <EditText
-        android:id="@+id/EditCor"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_edit_text"
-        android:drawablePadding="12dp"
-        android:hint="EX: VERMELHO"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:id="@+id/editCor"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Ex: Vermelho"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCor" />
-
-    <EditText
-        android:id="@+id/EditPlaca"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_edit_text"
-        android:drawablePadding="12dp"
-        android:hint="EX: ABC1D34"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPlaca" />
 
     <TextView
         android:id="@+id/textNomeServico"
@@ -55,7 +60,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Adicione as informações do \nveículo"
+        android:text="Adicione as informações do \n novo veículo."
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -63,65 +68,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/textModelo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Modelo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editModelo"
         app:layout_constraintTop_toBottomOf="@+id/EditPlaca" />
+
 
     <TextView
         android:id="@+id/textMarca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Marca"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditModelo" />
-
+        app:layout_constraintStart_toStartOf="@+id/editMarca"
+        app:layout_constraintTop_toBottomOf="@+id/editModelo" />
 
     <TextView
         android:id="@+id/textCor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cor"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditMarca" />
+        app:layout_constraintStart_toStartOf="@+id/editCor"
+        app:layout_constraintTop_toBottomOf="@+id/editMarca" />
 
     <TextView
         android:id="@+id/textCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Tipo de Veículo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditCor" />
+        app:layout_constraintStart_toStartOf="@+id/spinnerCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/editCor" />
 
     <Spinner
         android:id="@+id/spinnerCategoria"
         android:layout_width="320dp"
         android:layout_height="48dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:alwaysDrawnWithCache="false"
         android:animateLayoutChanges="false"
         android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
 
@@ -129,39 +121,22 @@
         android:id="@+id/textPlaca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         android:text="Placa"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/EditPlaca"
         app:layout_constraintTop_toBottomOf="@+id/textNomeServico" />
-
-    <EditText
-        android:id="@+id/EditModelo"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_edit_text"
-        android:drawablePadding="12dp"
-        android:hint="EX: ONIX"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textModelo" />
 
     <Button
         android:id="@+id/buttonInserir"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/blue1"
         android:gravity="center"
         android:text="Inserir"
         android:textSize="16sp"
         app:cornerRadius="15dp"
-        app:iconTint="@color/black"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />

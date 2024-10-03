@@ -3,18 +3,22 @@ package com.app.upscar.view;
 import static com.app.upscar.model.Variaveis.database;
 import static com.app.upscar.model.Variaveis.tipoAutomovelEscolhido;
 
-import android.content.Intent;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.app.upscar.R;
 import com.app.upscar.model.AdapterAutomoveis;
@@ -97,30 +101,98 @@ public class ListaAutomoveis extends AppCompatActivity {
         criarVeiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ListaAutomoveis.this, AdicionarAutomoveis.class);
-                startActivity(intent);
+                // Mostra o diálogo para adicionar automóveis
+                showAdicionarAutomovelDialog(ListaAutomoveis.this);
             }
         });
 
     }
 
     public void atualizaCarrosAdapter() {
-        AdapterAutomoveis adapter = new AdapterAutomoveis(this, carros);
+        if (listViewCarros.getAdapter() == null) {
+            AdapterAutomoveis adapter = new AdapterAutomoveis(this, carros);
+            listViewCarros.setAdapter(adapter);
+        } else {
+            ((AdapterAutomoveis) listViewCarros.getAdapter()).atualizarDados(carros);
+        }
+
         if (carros.isEmpty()) {
             listViewCarros.setVisibility(View.INVISIBLE);
         } else {
             listViewCarros.setVisibility(View.VISIBLE);
-            listViewCarros.setAdapter(adapter);
         }
     }
 
     public void atualizaMotosAdapter(){
-        AdapterAutomoveis adapter = new AdapterAutomoveis(this, motos);
+        if (listViewMotos.getAdapter() == null) {
+            AdapterAutomoveis adapter = new AdapterAutomoveis(this, motos);
+            listViewMotos.setAdapter(adapter);
+        } else {
+            ((AdapterAutomoveis) listViewMotos.getAdapter()).atualizarDados(motos);
+        }
+
         if(motos.isEmpty()){
             listViewMotos.setVisibility(View.INVISIBLE);
         }else{
             listViewMotos.setVisibility(View.VISIBLE);
-            listViewMotos.setAdapter(adapter);
         }
+    }
+
+    private void showAdicionarAutomovelDialog(Context context) {
+        // Cria o diálogo
+        Dialog dialog = new Dialog(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View dialogView = inflater.inflate(R.layout.activity_adicionar_automoveis, null);
+
+        // Vincula o layout ao diálogo
+        dialog.setContentView(dialogView);
+
+        // Inicializa os elementos da interface
+        Spinner tipocategoria = dialogView.findViewById(R.id.spinnerCategoria);
+        EditText placaEdit = dialogView.findViewById(R.id.EditPlaca);
+        EditText modeloEdit = dialogView.findViewById(R.id.editModelo); // Corrigido
+        EditText marcaEdit = dialogView.findViewById(R.id.editMarca); // Corrigido
+        EditText corEdit = dialogView.findViewById(R.id.editCor); // Corrigido
+        Button adicionar = dialogView.findViewById(R.id.buttonInserir);
+
+        // Configura o Spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                context,
+                android.R.layout.simple_spinner_item,
+                new String[]{"Carro", "Moto"}
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipocategoria.setAdapter(adapter);
+
+        // Lógica do botão "Adicionar" no diálogo
+        adicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Reutilize o código que você já tem para adicionar o automóvel
+                String tipoVeiculo = "carros"; //Vem do spinner
+                String cor = corEdit.getText().toString();
+                String marca = marcaEdit.getText().toString();
+                String modelo = modeloEdit.getText().toString();
+                String placa = placaEdit.getText().toString();
+                Automovel temp = new Automovel("B", cor, marca, modelo, placa);
+
+                // Adicione a lógica de inserir no Firebase e localmente (carros/motos)
+                if (tipoVeiculo.equals("carros")) {
+                    carros.add(temp);
+                    atualizaCarrosAdapter();
+                } else if (tipoVeiculo.equals("motos")) {
+                    motos.add(temp);
+                    atualizaMotosAdapter();
+                }
+
+                String idUsuario = "maF9VK0I2XeTmUV85RziKVC94za2"; // Substitua pelo ID real do usuário
+                DatabaseReference refAutomovel = database.getReference("usuarios/" + idUsuario + "/automoveis/" + tipoVeiculo);
+                refAutomovel.child(String.valueOf(carros.indexOf(temp))).setValue(temp);
+
+                dialog.dismiss(); // Fecha o diálogo ao concluir
+            }
+        });
+
+        dialog.show();
     }
 }

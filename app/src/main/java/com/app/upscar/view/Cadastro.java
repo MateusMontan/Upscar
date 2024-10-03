@@ -1,10 +1,12 @@
 package com.app.upscar.view;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,7 +42,10 @@ public class Cadastro extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editSenha);
 
-        //Button botaoEnviar = findViewById(R.id.buttonEnviarCadastro);
+        TextView textView = findViewById(R.id.textView10);
+        textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        Button botaoEnviar = findViewById(R.id.buttonInserir);
 
         Button botaoLogin = findViewById(R.id.buttonInserir);
         botaoLogin.setOnClickListener(new View.OnClickListener() {
@@ -51,16 +56,16 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        //        botaoEnviar.setOnClickListener(new View.OnClickListener() {
-        //            @Override
-        //            public void onClick(View v) {
-        //
-        //                if(validarCampos()){
-        //                    criarUsuario();
-        //                }
-        //
-        //            }
-        //        });
+        botaoEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(validarCampos()){
+                    criarUsuario();
+                }
+
+            }
+        });
 
     }
 

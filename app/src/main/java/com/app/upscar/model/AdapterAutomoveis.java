@@ -26,6 +26,7 @@ import static com.app.upscar.model.Variaveis.tipoAutomovelEscolhido;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
@@ -89,11 +90,6 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
                                 .getReference("usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros")
                                 .child(getItem(position).toString());
 
-                        Log.d("Automovel 2", "getView: "+automovel.toString());
-                        Log.d("Automovel 2", "getView 2: "+reference_automovel.toString());
-
-
-
                         reference_automovel.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -130,8 +126,15 @@ public class AdapterAutomoveis extends ArrayAdapter<Automovel> {
         });
 
 
+
         return convertView;
 
+    }
+
+    public void atualizarDados(ArrayList<Automovel> novosDados) {
+        this.clear(); // Limpa os dados antigos do adapter
+        this.addAll(novosDados); // Adiciona os novos dados ao adapter
+        notifyDataSetChanged(); // Notifica o adapter sobre a mudança
     }
 
 

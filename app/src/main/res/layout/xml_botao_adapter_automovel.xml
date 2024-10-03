@@ -13,6 +13,9 @@
         android:text="Button"
         android:background="@drawable/button_background"
         android:textColor="@color/white2"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,9 +23,9 @@
 
     <ImageButton
         android:id="@+id/BtnDelete"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/icon_delete"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/icon_deletar"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Deletar este veículo"
         android:layout_marginEnd="16dp"
