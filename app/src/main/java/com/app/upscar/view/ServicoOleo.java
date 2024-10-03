@@ -33,23 +33,23 @@ public class ServicoOleo extends AppCompatActivity {
         setContentView(R.layout.activity_servico_oleo);
 
         if (checkPermission()) {
-            setupUI();
+            //setupUI();
         } else {
             requestPermission();
         }
     }
 
-    private void setupUI() {
-        final ImageView imageView = findViewById(R.id.imageView5);
+ //   private void setupUI() {
+   //     final ImageView imageView = findViewById(R.id.imageView5);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFilePicker();
+     //   imageView.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+         //   public void onClick(View v) {
+           //     openFilePicker();
                 // Aqui, você pode adicionar qualquer lógica adicional que deseja executar ao clicar na imagem.
-            }
-        });
-    }
+          //  }
+        //});
+    //}
     private boolean checkPermission() {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
@@ -59,11 +59,11 @@ public class ServicoOleo extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_PERMISSION_CODE);
     }
 
-    private void openFilePicker() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        startActivityForResult(intent, PICK_FILE_REQUEST_CODE);
-    }
+    //private void openFilePicker() {
+        //Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        //intent.setType("image/*");
+      //startActivityForResult(intent, PICK_FILE_REQUEST_CODE);
+    //}
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -71,7 +71,7 @@ public class ServicoOleo extends AppCompatActivity {
 
         if (requestCode == REQUEST_PERMISSION_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                setupUI();
+                //setupUI();
             } else {
                 Toast.makeText(this, "Permissão negada. Não é possível acessar a galeria.", Toast.LENGTH_SHORT).show();
             }
@@ -87,15 +87,12 @@ public class ServicoOleo extends AppCompatActivity {
 
             try {
                 InputStream inputStream = getContentResolver().openInputStream(selectedFileUri);
-
-                // Especifique o diretório desejado
                 File customDirectory = new File(getExternalFilesDir(null), "MyCARPhoto");
 
                 if (!customDirectory.exists()) {
                     customDirectory.mkdirs();
                 }
 
-                // Nome do arquivo com carimbo de data e hora
                 String timeStamp = String.valueOf(System.currentTimeMillis());
                 String imageFileName = "JPEG_" + timeStamp + ".jpg";
 

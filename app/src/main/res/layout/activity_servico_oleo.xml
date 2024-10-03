@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color"
+    android:theme="@style/Base.Theme.MyCar.ActionBar"
     tools:context=".view.ServicoOleo">
 
     <TextView
@@ -15,7 +16,6 @@
         android:text="FIAT UNO (DCM - 0710)"
         android:textColor="@color/white1"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,8 +28,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Data"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditPlaca" />
 
@@ -40,8 +38,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Trocado Km"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditModelo" />
 
@@ -52,8 +48,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Oléo"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edit4" />
 
@@ -77,8 +71,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Próximo Km"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edit3" />
 
@@ -89,8 +81,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:text="Local"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNomeServico" />
 
@@ -100,7 +90,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
         android:paddingStart="12dp"
@@ -114,7 +103,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
         android:inputType="date"
@@ -129,7 +117,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
         android:paddingStart="12dp"
@@ -143,7 +130,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
         android:paddingStart="12dp"
@@ -157,7 +143,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/custom_edit_text"
         android:drawablePadding="12dp"
         android:hint="..."
         android:paddingStart="12dp"
