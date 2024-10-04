@@ -195,7 +195,7 @@
         app:layout_constraintTop_toTopOf="@+id/EditProximo" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/BtOleo"
+        android:id="@+id/BtMarca"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"

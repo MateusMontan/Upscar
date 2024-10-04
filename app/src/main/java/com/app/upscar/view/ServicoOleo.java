@@ -60,9 +60,77 @@ public class ServicoOleo extends AppCompatActivity {
                 usuarioEscolhido.setNome(novoLocal);
 
                 DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
-                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo";
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo/";
 
                 databaseRef.child(caminho + "local").setValue(novoLocal);
+                Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Button BtData = findViewById(R.id.BtData);
+        BtData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String novaData = EditData.getText().toString();
+                usuarioEscolhido.setNome(novaData);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo/";
+
+                databaseRef.child(caminho + "data").setValue(novaData);
+                Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Button BtTrocado = findViewById(R.id.BtTrocado);
+        BtTrocado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String novoKmTrocado = EditTrocado.getText().toString();
+                usuarioEscolhido.setNome(novoKmTrocado);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo/";
+
+                databaseRef.child(caminho + "trocadokm").setValue(novoKmTrocado);
+                Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Button BtProximo = findViewById(R.id.BtProximo);
+        BtProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String novoProximoKm = EditProximo.getText().toString();
+                usuarioEscolhido.setNome(novoProximoKm);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo/";
+
+                databaseRef.child(caminho + "proximokm").setValue(novoProximoKm);
+                Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Button BtMarca = findViewById(R.id.BtMarca);
+        BtMarca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String novoMarca = EditMarca.getText().toString();
+                usuarioEscolhido.setNome(novoMarca);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo/";
+
+                databaseRef.child(caminho + "marca").setValue(novoMarca);
                 Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
 
             }
