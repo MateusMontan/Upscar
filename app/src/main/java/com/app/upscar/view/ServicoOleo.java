@@ -60,7 +60,7 @@ public class ServicoOleo extends AppCompatActivity {
                 usuarioEscolhido.setNome(novoLocal);
 
                 DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
-                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/5/autoservicos/oleo";
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/1/autoservicos/oleo";
 
                 databaseRef.child(caminho + "local").setValue(novoLocal);
                 Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
