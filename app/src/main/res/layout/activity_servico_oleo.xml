@@ -29,7 +29,7 @@
         android:layout_marginTop="20dp"
         android:text="Data"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditPlaca" />
+        app:layout_constraintTop_toBottomOf="@+id/EditLocal" />
 
     <TextView
         android:id="@+id/textView4"
@@ -39,7 +39,7 @@
         android:layout_marginTop="20dp"
         android:text="Trocado Km"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditModelo" />
+        app:layout_constraintTop_toBottomOf="@+id/EditData" />
 
     <TextView
         android:id="@+id/textView5"
@@ -49,7 +49,7 @@
         android:layout_marginTop="15dp"
         android:text="Oléo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edit4" />
+        app:layout_constraintTop_toBottomOf="@+id/EditProximo" />
 
     <TextView
         android:id="@+id/TextView9"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edit5" />
+        app:layout_constraintTop_toBottomOf="@+id/EditMarca" />
 
     <TextView
         android:id="@+id/textView6"
@@ -72,7 +72,7 @@
         android:layout_marginTop="20dp"
         android:text="Próximo Km"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edit3" />
+        app:layout_constraintTop_toBottomOf="@+id/EditTrocado" />
 
     <TextView
         android:id="@+id/textView7"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textNomeServico" />
 
     <EditText
-        android:id="@+id/EditPlaca"
+        android:id="@+id/EditLocal"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/EditModelo"
+        android:id="@+id/EditData"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -112,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/Edit3"
+        android:id="@+id/EditTrocado"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/Edit4"
+        android:id="@+id/EditProximo"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -138,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/Edit5"
+        android:id="@+id/EditMarca"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -151,59 +151,59 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Bt1"
+        android:id="@+id/BtLocal"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/EditPlaca"
-        app:layout_constraintTop_toTopOf="@+id/EditPlaca" />
+        app:layout_constraintStart_toEndOf="@+id/EditLocal"
+        app:layout_constraintTop_toTopOf="@+id/EditLocal" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Bt2"
+        android:id="@+id/BtData"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/EditModelo"
-        app:layout_constraintTop_toTopOf="@+id/EditModelo" />
+        app:layout_constraintStart_toEndOf="@+id/EditData"
+        app:layout_constraintTop_toTopOf="@+id/EditData" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Bt3"
+        android:id="@+id/BtTrocado"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Edit3"
-        app:layout_constraintTop_toTopOf="@+id/Edit3" />
+        app:layout_constraintStart_toEndOf="@+id/EditTrocado"
+        app:layout_constraintTop_toTopOf="@+id/EditTrocado" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Bt4"
+        android:id="@+id/BtProximo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Edit4"
-        app:layout_constraintTop_toTopOf="@+id/Edit4" />
+        app:layout_constraintStart_toEndOf="@+id/EditProximo"
+        app:layout_constraintTop_toTopOf="@+id/EditProximo" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Bt5"
+        android:id="@+id/BtOleo"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Edit5"
-        app:layout_constraintTop_toTopOf="@+id/Edit5" />
+        app:layout_constraintStart_toEndOf="@+id/EditMarca"
+        app:layout_constraintTop_toTopOf="@+id/EditMarca" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BTUDownload"
@@ -223,7 +223,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/Edit5"
+        app:layout_constraintStart_toStartOf="@+id/EditMarca"
         app:layout_constraintTop_toBottomOf="@+id/TextView9"
         app:srcCompat="@drawable/ion_attachclipe" />
 

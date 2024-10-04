@@ -1,11 +1,16 @@
 package com.app.upscar.view;
 
+import static com.app.upscar.model.Variaveis.autoservicoescolhido;
+import static com.app.upscar.model.Variaveis.usuarioEscolhido;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +21,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.app.upscar.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,11 +39,40 @@ public class ServicoOleo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servico_oleo);
 
-        if (checkPermission()) {
-            //setupUI();
-        } else {
-            requestPermission();
-        }
+        EditText EditLocal = findViewById(R.id.EditLocal);
+        EditText EditData = findViewById(R.id.EditData);
+        EditText EditTrocado = findViewById(R.id.EditTrocado);
+        EditText EditProximo = findViewById(R.id.EditProximo);
+        EditText EditMarca = findViewById(R.id.EditMarca);
+
+//        EditLocal.setText(autoservicoescolhido;
+//        EditData.setText(autoservicoescolhido);
+//        EditTrocado.setText(autoservicoescolhido);
+//        EditProximo.setText(autoservicoescolhido);
+//        EditMarca.setText(autoservicoescolhido.);
+
+        Button BtLocal = findViewById(R.id.BtLocal);
+        BtLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String novoLocal = EditLocal.getText().toString();
+                usuarioEscolhido.setNome(novoLocal);
+
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/5/autoservicos/oleo";
+
+                databaseRef.child(caminho + "local").setValue(novoLocal);
+                Toast.makeText(ServicoOleo.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+//        if (checkPermission()) {
+//            //setupUI();
+//        } else {
+//            requestPermission();
+//        }
     }
 
  //   private void setupUI() {
