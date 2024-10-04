@@ -1,24 +1,26 @@
 package com.app.upscar.model;
 
+import java.util.Map;
+
 public class Automovel {
     private String categoria;
     private String cor;
     private String marca;
     private String modelo;
     private String placa;
-    private AutoServico autoservico; // Novo campo para serviços opcionais
+    //private Map<String, AutoServico> autoservicos; // Mapeamento de tipo de serviço para o serviço
 
     public Automovel() {
     }
 
     // Construtor atualizado
-    public Automovel(String categoria, String cor, String marca, String modelo, String placa, AutoServico autoservico) {
+    public Automovel(String categoria, String cor, String marca, String modelo, String placa, String autoservico) {
         this.categoria = categoria;
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
-        this.autoservico = autoservico;
+        //this.autoservico = autoservico;
     }
 
     // Getters e Setters
@@ -62,12 +64,21 @@ public class Automovel {
         this.placa = placa;
     }
 
-    public AutoServico getAutoservico() {
-        return autoservico;
-    }
+//    public Map<String, AutoServico> getAutoservicos() {
+//        return autoservicos;
+//    }
+//
+//    public void setAutoservicos(Map<String, AutoServico> autoservicos) {
+//        this.autoservicos = autoservicos;
+//    }
 
-    public void setAutoservico(AutoServico autoservico) {
-        this.autoservico = autoservico;
+    public Automovel clone() {
+        try {
+            return (Automovel) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Tratar a exceção, se necessário
+            return null;
+        }
     }
 
     @Override
@@ -78,7 +89,7 @@ public class Automovel {
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", placa='" + placa + '\'' +
-                ", autoservico=" + (autoservico != null ? autoservico.toString() : "Nenhum serviço registrado") +
+                //", autoservico=" + (autoservico != null ? autoservico.toString() : "Nenhum serviço registrado") +
                 '}';
     }
 }

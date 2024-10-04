@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.upscar.R;
 import com.app.upscar.model.AdapterAutomoveis;
+import com.app.upscar.model.AutoServico;
 import com.app.upscar.model.Automovel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +31,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ListaAutomoveis extends AppCompatActivity {
@@ -58,8 +61,13 @@ public class ListaAutomoveis extends AppCompatActivity {
                     for (DataSnapshot servicoSnapshot : dataSnapshot.getChildren()) {
                         Automovel value = servicoSnapshot.getValue(Automovel.class);
                         if (value != null) {
+
+                            Map<String, AutoServico> servicos = new HashMap<>();
+                            servicos.put("oleo", new AutoServico("03/04/2024", "garantia_oleo.jpg", "Capitão Caverna", "Lubrax", "25438 Km", "15438 Km"));
+                            servicos.put("motor", new AutoServico("10/05/2024", "garantia_motor.jpg", "Oficina XYZ", "Bosch", "30000 Km", "20000 Km"));
+
                             carros.add(new Automovel(value.getCategoria(),value.getCor(),value.getMarca(),
-                                    value.getModelo(),value.getPlaca()));
+                                    value.getModelo(),value.getPlaca(),"teste"));
                         }
                     }
                     atualizaCarrosAdapter();
@@ -82,7 +90,7 @@ public class ListaAutomoveis extends AppCompatActivity {
                         Automovel value = servicoSnapshot.getValue(Automovel.class);
                         if (value != null) {
                             motos.add(new Automovel(value.getCategoria(),value.getCor(),value.getMarca(),
-                                    value.getModelo(),value.getPlaca()));
+                                    value.getModelo(),value.getPlaca(),"value.getAutoservico()"));
                         }
                     }
                     atualizaMotosAdapter();
@@ -174,7 +182,7 @@ public class ListaAutomoveis extends AppCompatActivity {
                 String marca = marcaEdit.getText().toString();
                 String modelo = modeloEdit.getText().toString();
                 String placa = placaEdit.getText().toString();
-                Automovel temp = new Automovel("B", cor, marca, modelo, placa);
+                Automovel temp = new Automovel("B", cor, marca, modelo, placa, null);
 
                 // Adicione a lógica de inserir no Firebase e localmente (carros/motos)
                 if (tipoVeiculo.equals("carros")) {
