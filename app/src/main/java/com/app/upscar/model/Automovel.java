@@ -6,17 +6,19 @@ public class Automovel {
     private String marca;
     private String modelo;
     private String placa;
+    private AutoServico autoservico; // Novo campo para serviços opcionais
 
     public Automovel() {
     }
 
-    // Construtor
-    public Automovel(String categoria, String cor, String marca, String modelo, String placa) {
+    // Construtor atualizado
+    public Automovel(String categoria, String cor, String marca, String modelo, String placa, AutoServico autoservico) {
         this.categoria = categoria;
         this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
+        this.autoservico = autoservico;
     }
 
     // Getters e Setters
@@ -60,7 +62,14 @@ public class Automovel {
         this.placa = placa;
     }
 
-    // Método para imprimir informações do automóvel
+    public AutoServico getAutoservico() {
+        return autoservico;
+    }
+
+    public void setAutoservico(AutoServico autoservico) {
+        this.autoservico = autoservico;
+    }
+
     @Override
     public String toString() {
         return "Automovel{" +
@@ -69,15 +78,7 @@ public class Automovel {
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", placa='" + placa + '\'' +
+                ", autoservico=" + (autoservico != null ? autoservico.toString() : "Nenhum serviço registrado") +
                 '}';
-    }
-
-    public Automovel clone() {
-        try {
-            return (Automovel) super.clone();
-        } catch (CloneNotSupportedException e) {
-            // Tratar a exceção, se necessário
-            return null;
-        }
     }
 }

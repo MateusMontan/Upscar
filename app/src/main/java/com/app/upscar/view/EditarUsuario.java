@@ -54,10 +54,14 @@ public class EditarUsuario extends AppCompatActivity {
 
                 DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
 
-                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("nome").setValue(novoNome);
-                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("email").setValue(novoEmail);
-                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("senha").setValue(novaSenha);
-                databaseRef.child("usuarios").child("maF9VK0I2XeTmUV85RziKVC94za2").child("dados").child("telefone").setValue(novoTelefone);
+                String caminho = "usuarios/maF9VK0I2XeTmUV85RziKVC94za2/dados/";
+
+                databaseRef.child(caminho + "nome").setValue(novoNome);
+                databaseRef.child(caminho + "email").setValue(novoEmail);
+                databaseRef.child(caminho + "senha").setValue(novaSenha);
+                databaseRef.child(caminho + "telefone").setValue(novoTelefone);
+
+                ///usuarios/maF9VK0I2XeTmUV85RziKVC94za2/automoveis/carros/5/autoservicos/oleo
 
                 Toast.makeText(EditarUsuario.this, "Dados atualizados com sucesso!", Toast.LENGTH_SHORT).show();
 

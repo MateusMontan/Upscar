@@ -11,7 +11,7 @@ public class Variaveis {
     public static Automovel automovelescolhido;
     public static Usuario usuarioEscolhido;
     public static ArrayList<Cidade> cidades;
-
+    public static AutoServico autoservicoescolhido;
     public static Cidade cidadeescolhida;
     public static String tipoAutomovelEscolhido;
 
