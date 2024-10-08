@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
                 Log.d("TESTE", "onClick: "+editUser.getText().toString()+editSenha.getText().toString());
                 if(editUser.getText().toString().equals("mateusinfocefetmg@gmail.com") ){
                     if(editSenha.getText().toString().equals("123456")){
-                        Intent intent = new Intent(Login.this, MenuPrincipal.class);
+                        Intent intent = new Intent(Login.this, TeladeLoading.class);
                         startActivity(intent);
 
                         finish();
