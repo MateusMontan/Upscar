@@ -13,6 +13,9 @@
         android:theme="@style/Base.Theme.MyCar"
         tools:targetApi="31">
         <activity
+            android:name=".view.TeladeLoading"
+            android:exported="false" />
+        <activity
             android:name=".view.ListaTipoAutomoveis"
             android:exported="false" />
         <activity
